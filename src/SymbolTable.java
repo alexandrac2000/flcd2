@@ -3,7 +3,10 @@ import java.util.List;
 
 public class SymbolTable {
     private List<List<String>> symTbl;
-
+    private static  int defCap=100;
+    public SymbolTable() {
+        this(defCap);
+    }
     public SymbolTable(int capacity){
         this.symTbl=new ArrayList<>();
         for(int i=0;i<capacity;i++){
@@ -58,5 +61,7 @@ public class SymbolTable {
 
         return string.toString();
     }
-
+    public List<List<String>> getSymbolTable() {
+        return symTbl;
+    }
 }

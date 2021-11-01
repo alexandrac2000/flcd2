@@ -1,0 +1,15 @@
+
+
+I defined some lists representing  separators, operators and reserved words.
+I also have  methods that determine if something is an identifier or a constant .
+One function that splits a given str into tokens that are delimited by separators or operators.
+In the "scan" method I initialize an empty symbol table and the PIF.
+I represent the PIF as a list that contains a string ("identifier" , "constant" and the token itself otherwise),
+and the position in the symbol table(as integers).
+I go in the program line by line.
+i take a line, I split it into tokens and check the type of the token and insert it into the PIF.
+If the token is an identifier or a constant I put the position from the symbol table in the PIF,
+ otherwise I insert the position (-1, -1) in the PIF.
+In the end I return a "TableEntityStructure" containing the symbol table and the PIF.
+If there are any lexical error, the programme throws an error specifying the token at which the error was met
+and where.
