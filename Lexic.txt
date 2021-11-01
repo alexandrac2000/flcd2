@@ -1,0 +1,35 @@
+Alphabet:
+a.Upper (A-Z) and lower case letter (a-z) of the English alphabet
+b. Underline character '_';
+c.Decimal digits (0-9);
+
+
+1.Lexic:
+a.Special symbols,representing:
+-operators + = * / % = ~ < > <= >=
+-separators () {} : . space
+-reserved words:
+   v vect  int verify const char other from to vect ret str print read do while 
+b.identifiers
+
+-a sequence of letters and digits(first letters than digits),such that the first character is a letter;
+the rule is:
+identifier=letter| letter{letter}{digit}
+letter = "A"| "B" |....| "Z" | "a"|..|"z"
+digit="0"|"1"|...|"9"
+
+c.constants
+1.Integer -rule:
+noconst="0" | ["+" |"-"] "1"|"2"|..|"9" {digit}
+no=digit{no}
+
+2.character
+character = 'letter'|'digit'|'operator'|'separator'
+
+3.string
+constchar= "string"
+string =char{string}
+char=letter|digit|operator|separator|punctuation 
+-punctuation signs are the normal punctuation signs
+
+

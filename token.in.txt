@@ -1,0 +1,24 @@
+The list of tokens are:
+v
+vect
+int
+char
+str
+float
+verify
+other
+while
+do
+(
+)
+{
+}
++
+*
+-
+=
+~
+/
+%
+space
+.

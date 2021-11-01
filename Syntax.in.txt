@@ -1,0 +1,27 @@
+2.Syntax:
+
+The words -predefined tokens are specified between " and ":
+-array declaration is the same but it has vect in front instead of v
+PROGRAM=decllist "." cmpstmt "."
+decllist=("v"|"vect") declaration "."| ("v"|"vect") declaration "." decllist
+declaration = type IDENTIFIER
+type= "bool" | "char" | "int" | "float" | "str"
+
+
+cmpdstmt= stmtlist
+stmtlist= stmt "." | stmt "." stmtlist
+stmt= simplstmt | structstmt
+simplstmt =assignstmt | iostmt
+assignstmt = IDENTIFIER "~" expression
+expression = expression "+"|"-" term | term
+term= term "*" | "/" | "%" factor | factor
+factor = "(" expression ")" factor | factor
+iostmt= "read" | "print" "("IDENTIFIER ")"
+structstmt=cmpdstmt | verifystmt| whilestmt
+ifstmt= "verify" "(" condition ")" ":" stmt ["other" stmt]
+whilestmt ="while" "(" condition ")" ":"stmt | "do" stmt "while"
+"(" condition ")"
+condition = expresion RELATION expresion
+RELATION ="<"|"<=" |"=" |">" | ">="
+
+ 
