@@ -1,0 +1,34 @@
+
+I represented FA as a class with 5 attributes:
+- the set of states
+- the set of  alphabet
+
+
+
+https://github.com/alexandrac2000/flcd2.git
+
+- the initial state
+- the  final states
+- the  transitions, which maps a TableEntityStructure of type (source, route) to a list of destinations
+
+The FA class has a method that reads an FA from a file, which returns the FA created from the  file if it is ok, or throws an exception otherwise.
+I also implemented in the FA class the following methods:
+- a method that checks if the FA is a deterministic, which checks that for all destination states, there is no more than one route that reaches it.
+- a method that checks if a sequence is accepted or not by the FA. This is done in the following way: I take the initial state of the FA as the current state and then iterate through the characters of the given sequence. If the pair formed of the current state and the current character from the sequence is a valid transition, then I make the current state to be the current character, otherwise, if it is not a valid transition, it means that the sequence is not accepted and I return false. If the last current state is also a valid transition, it means that the sequence is accepted by the FA and the method returns true.
+The structure of the file is the following:
+- 1st line:  states
+- 2nd line:  alphabet
+- 3rd line: the initial state
+- 4th line: the set of final states
+- all the remaining lines will contain a transition(S,R,D)
+The BNF:
+FA = states ‘\n’ alphabet ‘\n’ initial_state ‘\n’ final_states ‘\n’ transitions
+states = state | state ‘ ‘ states
+alphabet = symbol | symbol ‘ ‘ alphabet
+initial_state = state
+final_states = state | state ‘ ‘ final_states
+transitions = transition | transition ‘\n’ transitions
+transition = state ‘, ’ symbol ‘, ’ state
+state = string
+symbol = string
+

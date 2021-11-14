@@ -32,3 +32,9 @@ from int i~0,i+~1 to i~n:
 ret @s.
 
 
+vect int 2a.
+v int _n.
+v int s~0.
+from int i~0,i+~1 to i~n:
+	s~s+2a{i}.
+ret @s.
