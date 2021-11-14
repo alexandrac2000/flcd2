@@ -1,0 +1,46 @@
+P1:
+v int a.
+v int b.
+v int c.
+v int maxi.
+maxi~a.
+verify (maxi<b):
+	maxi~b.
+verify (maxi<c):
+	maxi~c.
+ret @maxi.
+
+P2:
+v int a.
+v int d.
+verify (a<2):
+	ret F.
+verify (a=2):
+	ret T.
+verify (a%2=0):
+	ret F.
+from d~3,d+~2 to d*d~a:
+	verify (a%d=0):
+		ret F.
+ret T.
+
+
+
+
+P2:
+vect int a.
+v int n.
+v int s~0.
+from int i~0,i+~1 to i~n:
+	s~s+a{i}.
+ret @s.
+
+
+
+p1err:
+vect int 2a.
+v int _n.
+v int s~0.
+from int i~0,i+~1 to i~n:
+	s~s+2a{i}.
+ret @s.
